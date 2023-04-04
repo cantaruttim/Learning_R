@@ -15,6 +15,3 @@ LungCapData$Height[1:10]
 CatHeight[1:10]
 # [1] C E B B C D C C C C
 # Levels: A B C D E F
-
-
-
