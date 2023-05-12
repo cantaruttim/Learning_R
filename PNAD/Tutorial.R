@@ -40,7 +40,7 @@ die - 1
 
 install.packages("esquisse")
 install.packages("ggplot2")
-library(esquisse)
+library(esquisse)-
 library(ggplot2)
 library(sf)
 
@@ -49,8 +49,16 @@ View(data)
 
 head(data)
 
-esquisser(data)
+# esquisser(data)
 
+
+hist(data$Idade, xlab = "Idade", col="darkblue", border="red",
+     probability = FALSE, xlim = c(0,100), ylim= c(0,12000), main="Frequência de Idades")
+
+??hist
+
+
+## Graficos Exportados com o Esquisser
 
 library(ggplot2)
 
