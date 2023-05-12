@@ -60,6 +60,28 @@ abline(v=30, col="orange", lwd=2);
 abline(v=50, col="orange", lwd=2);
 
 
+## Adicionando de uma vez 
+
+#abline(v = c(median(mtcars$mpg), mean(mtcars$mpg), 30),
+#       col = c("blue", "red", "orange"),
+#       lwd = c(2,2,4),
+#       lty=c(1,2,3));
+
+## Acrescentando a Legenda
+legend(x="topright", #posicao da legenda
+       c("Mediana","Média","Limite"), #nomes da legenda
+       col=c("blue","red","orange"), #cores
+       lty=c(1,2,3), #estilo da linha
+       lwd=c(2,2,4)) #grossura das linhas
+
+
+histograma<-hist(data$Idade, breaks = 20, ylim= c(0,12000), col="darkblue", xlim=c(10,95),main="Histograma Idades");
+xfit<-seq(min(data$Idade),max(data$Idade))
+yfit<-dnorm(xfit,mean=mean(data$Idade),sd=sd(data$Idade))
+yfit <- yfit*diff(histograma$mids[1:2])*length(data$Idade)
+lines(xfit, yfit, col="red", lwd=2)
+
+
 ??hist
 
 
