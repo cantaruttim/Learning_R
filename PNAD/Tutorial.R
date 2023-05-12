@@ -53,7 +53,12 @@ head(data)
 
 
 hist(data$Idade, xlab = "Idade", col="darkblue", border="red",
-     probability = FALSE, xlim = c(0,100), ylim= c(0,12000), main="Frequência de Idades")
+     probability = FALSE, xlim = c(0,100), ylim= c(0,12000), main="Frequência de Idades");
+abline(v=median(data$Idade), col="green", lwd=2);
+abline(v=mean(data$Idade), col="red", lwd=2);
+abline(v=30, col="orange", lwd=2);
+abline(v=50, col="orange", lwd=2);
+
 
 ??hist
 
