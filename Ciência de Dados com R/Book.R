@@ -51,4 +51,33 @@ ggplot(data = mpg) +
 
 
 
+## FACETS:
+
+#Another way, particularly useful for categorical variables, is to split your plot into
+#facets, subplots that each display one subset of the data.
+
+# formula in R is a data structure and not a synonym for "equation". Therefore, the variable that
+# you pass to facet_wrap() should be discrete
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_wrap(~ class, nrow = 2)
+
+# We can combine two variables with facet_grid function
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(drv ~ cyl)
+
+
+# GEOMETRIC OBJECTS
+
+
+
+
+
+
+
+
+
 
