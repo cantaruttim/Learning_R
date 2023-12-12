@@ -4,6 +4,7 @@ install.packages("ISLR")
 library(MASS)
 library(ISLR)
 
+##### LINEAR REGRESSION #####
 #### SIMPLE LINEAR REGRESSION ####
 fix(Boston)
 names(Boston)
