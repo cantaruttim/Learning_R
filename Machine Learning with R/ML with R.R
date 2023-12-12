@@ -59,3 +59,37 @@ plot(predict (lm.fit), rstudent (lm.fit))
 plot(hatvalues (lm.fit))
 which.max(hatvalues (lm.fit))
 # which.max identifies the index of the largest element of a vector.
+
+
+#### MULTIPLE LINEAR REGRESSION ####
+attach(Boston)
+lm.fit = lm(medv ~ lstat + age )
+summary(lm.fit)
+
+## using all the predictors
+
+lm.fit = lm(medv ~., data = Boston)
+summary(lm.fit)
+
+
+#R²
+summary(lm.fit)$r.qr
+
+#RSE
+summary(lm.fit)$sigma
+
+
+install.packages("car")
+library (car)
+vif(lm.fit)
+
+# age has a high p-value. So we may wish to run a regression excluding this predictor.
+
+lm.fit1 = lm(medv ~.-age ,data=Boston )
+summary(lm.fit1)
+
+## OR
+lm.fit1 = update(lm.fit, ~.-age)
+
+
+summary(lm(medv ~ lstat*age, data=Boston))
